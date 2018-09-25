@@ -1,0 +1,25 @@
+***updated Oct 22nd, 2017***
+
+* STEP0/ contains .hdf5 files with Particle information.
+These files are created with write_STEP0.py and PARTICLES.sh
+
+
+* STEP1/ contains .hdf5 files with cube data (i.e. interpolated version
+	of STEP0/ files.
+These files are created with cube.py (write_STEP1.py???) and CUBE.sh (WRITE.sh???).
+
+Note about write_STEP1.py: it seems to have been an early test using griddata
+	and works, but is no longer used. We use cube.py, which was given by Erwin.
+
+
+* STEP2_SCRIPTS/ contains create_scripts.py and MASTER.sh, which together
+	create a ton of PHOTON.sh files.
+These PHOTON.sh create Photon.hdf5 files in ~/scratch60/STEP2/, each of which
+	is a photon list corresponding to a given exposure time (initially, 2.0ks).
+
+
+* STEP3/ does not exist. However, step 3 relates to creating the events files
+	as well as the simputs, which is done via events.py. Need to make these
+	clean ASAP.
+
+

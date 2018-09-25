@@ -1,0 +1,10 @@
+FFLAGS = -e -O
+CC=cc
+CFLAGS=-O
+
+# cfitsio library flags
+LIBFITS = -lcfitsio -lnsl -lsocket
+
+# Fortran preprocessor flag pointing to XSPEC cal file for MEKAL
+#CPPFLAGS=-D'MEKALFILE="/data/alexey3/lheasoft/lheasoft/spectral/xspec/manager/mekal.mod"'
+CPPFLAGS=-D'MEKALFILE="/home/fas/nagai/etl28/programs/Xrays/heasoft-6.21/spectral/modelData/mekal.mod"'

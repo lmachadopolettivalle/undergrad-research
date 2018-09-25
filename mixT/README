@@ -1,0 +1,41 @@
+This code implements the spectro-T weighting algorithm described in
+Vikhlinin 2005. Please consult this PAPER for all details (file mixT.pdf
+included here).
+
+
+*************************************************************************
+INSTALLATION:
+
+1) Edit Makefile.solaris or Makefile.linux (or setup an analogues file for
+   your $OSTYPE).
+
+2) make
+
+   this creates two programs, mk_cal and weightT
+
+   mk_cal precomputes the calibration tables described in the PAPER
+   weightT should be used as an example of how to compute the T_spec
+           using the algorithm described in the PAPER
+
+USAGE:
+
+mk_cal  z=0.05  nH=4e20  rmf=chandra.rmf arf=chandra.arf \
+  -emin 0.7 -emax 10 >  tcal.dat
+
+   (create calibration for Chandra response and cluster at z=0.05, Galactic
+   absorption 4e20 cm**-2; fit in the 0.7-10 keV energy band)
+
+
+./weightT  cal=tcal.dat  [mode=XMM/PN or XMM/MOS or ASCA/SIS or ASCA/GIS]
+  (see Paper re the difference between Chandra and XMM and ASCA).
+
+
+========= Notes on various codes used here ================================
+
+mekal.F:  interpolates over XSPEC cal file to compute MEKAL model for 
+          the given T and metallicity
+
+sigism.f:   obtained from HEASARC
+readrmf.f:  collection of FTOOLS routines to read the response matrix
+calutil.f:  misc FTOOLS routines required by readrmf
+

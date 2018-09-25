@@ -1,0 +1,13 @@
+FFLAGS = -fno-second-underscore -ffixed-line-length-132 -DG77 -O -fno-f2c -malign-double -falign-jumps=2 -falign-loops=2 -falign-functions=2
+CC=gcc
+#FC=g77
+FC=gfortran
+CFLAGS=-O
+
+# cfitsio library flags
+LIBFITS = -L/home/fas/nagai/etl28/programs/cfitsio -lcfitsio -lnsl
+#LIBFITS = -L/data/maxim1/soft/lib -lcfitsio -lnsl
+
+# Fortran preprocessor flag pointing to XSPEC cal file for MEKAL
+#CPPFLAGS=-D'MEKALFILE="/data/alexey3/lheasoft/lheasoft/spectral/xspec/manager/mekal.mod"'
+#CPPFLAGS=-D'MEKALFILE="/home/fas/nagai/etl28/programs/Xrays/heasoft-6.21/spectral/modelData/mekal.mod"'
